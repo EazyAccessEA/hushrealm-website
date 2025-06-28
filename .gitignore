@@ -1,4 +1,28 @@
-node_modules
-.vercel
+# Dependency directories
+node_modules/
+.next/
+out/
+
+# Environment files
+.env*
+!.env.example
+
+# Build files
+dist/
+*.log
+
+# System files
 .DS_Store
-.env.local
+*.swp
+*.swo
+
+# IDE specific files
+.idea/
+.vscode/
+*.code-workspace
+
+# Test coverage
+coverage/
+
+# Local development files
+*.local
