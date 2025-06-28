@@ -36,7 +36,7 @@ const ResourcesSection = () => {
       type: "Guide",
       title: "15-Minute Daily Protocol for Circulation Optimization",
       description: "A step-by-step guide to the evidence-based techniques that can restore microvascular function naturally.",
-      readTime: "12 min read",
+      readTime: "4 min read",
       category: "Protocol",
       icon: Download,
       color: "green"
@@ -45,7 +45,7 @@ const ResourcesSection = () => {
       type: "Research",
       title: "Peer-Reviewed Studies on Microvascular Health",
       description: "Access the scientific research that forms the foundation of our assessment methodology.",
-      readTime: "25 min read",
+      readTime: "5 min read",
       category: "Science",
       icon: BookOpen,
       color: "orange"
@@ -54,7 +54,7 @@ const ResourcesSection = () => {
       type: "Case Study",
       title: "From Fatigue to Vitality: Real Transformation Stories",
       description: "Detailed case studies showing how men optimized their circulation and reclaimed their energy.",
-      readTime: "10 min read",
+      readTime: "5 min read",
       category: "Results",
       icon: User,
       color: "red"
