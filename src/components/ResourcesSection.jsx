@@ -7,9 +7,7 @@ const ResourcesSection = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
+      transition: { staggerChildren: 0.2 }
     }
   };
 
@@ -31,7 +29,8 @@ const ResourcesSection = () => {
       category: "Science",
       icon: BookOpen,
       color: "blue",
-      featured: true
+      featured: true,
+      url: "https://circulation.hushrealm.com/"
     },
     {
       type: "Guide",
@@ -89,7 +88,6 @@ const ResourcesSection = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-semibold mb-6 border border-orange-200">
               <BookOpen className="w-4 h-4 mr-2" />
@@ -133,14 +131,17 @@ const ResourcesSection = () => {
                         <span className="text-sm font-medium">{resource.type}</span>
                       </div>
                     </div>
-                    <motion.button
+                    <motion.a
+                      href={resource.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="hushrealm-gradient text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 group"
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                     >
                       Read Full Article
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-                    </motion.button>
+                    </motion.a>
                   </div>
                   <div className="relative">
                     <div className="bg-white rounded-2xl p-8 shadow-xl border border-blue-200">
@@ -189,15 +190,12 @@ const ResourcesSection = () => {
                     {resource.category}
                   </div>
                 </div>
-                
                 <h4 className="text-lg font-bold mb-3 leading-tight" style={{ color: 'var(--hushrealm-navy)' }}>
                   {resource.title}
                 </h4>
-                
                 <p className="text-gray-600 text-sm mb-4 leading-relaxed">
                   {resource.description}
                 </p>
-                
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-gray-500">
                     <Clock className="w-4 h-4" />
@@ -219,14 +217,10 @@ const ResourcesSection = () => {
           {/* Newsletter Signup */}
           <motion.div variants={itemVariants}>
             <div className="bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-3xl p-8 lg:p-12 text-center">
-              <h3 className="text-3xl font-bold mb-4">
-                Get Expert Health Tips & Early Access
-              </h3>
+              <h3 className="text-3xl font-bold mb-4">Get Expert Health Tips & Early Access</h3>
               <p className="text-xl opacity-90 mb-8 max-w-3xl mx-auto">
-                Join our community of health-conscious men and receive the latest research, 
-                optimization strategies, and exclusive content delivered to your inbox.
+                Join our community of health-conscious men and receive the latest research, optimization strategies, and exclusive content delivered to your inbox.
               </p>
-              
               <div className="max-w-md mx-auto">
                 <div className="flex gap-4 mb-4">
                   <input
@@ -246,7 +240,6 @@ const ResourcesSection = () => {
                   No spam, just smart updates. Unsubscribe anytime.
                 </p>
               </div>
-
               <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm opacity-90">
                 <span>✓ Weekly Research Updates</span>
                 <span>✓ Exclusive Protocols</span>
@@ -262,4 +255,3 @@ const ResourcesSection = () => {
 };
 
 export default ResourcesSection;
-
