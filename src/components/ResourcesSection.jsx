@@ -133,16 +133,13 @@ const ResourcesSection = () => {
                     </div>
                     <motion.a
                       href={resource.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="hushrealm-gradient text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 group"
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                     >
                       Read Full Article
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-                    </motion.a>
-                  </div>
+                    </motion.a>                  </div>
                   <div className="relative">
                     <div className="bg-white rounded-2xl p-8 shadow-xl border border-blue-200">
                       <div className="text-center mb-6">
