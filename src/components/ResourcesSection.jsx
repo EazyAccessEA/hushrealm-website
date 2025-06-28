@@ -42,15 +42,6 @@ const ResourcesSection = () => {
       color: "green"
     },
     {
-      type: "Video",
-      title: "Understanding Your Energy Assessment Results",
-      description: "Learn how to interpret your circulation patterns and implement personalized optimization strategies.",
-      readTime: "15 min watch",
-      category: "Education",
-      icon: Play,
-      color: "purple"
-    },
-    {
       type: "Research",
       title: "Peer-Reviewed Studies on Microvascular Health",
       description: "Access the scientific research that forms the foundation of our assessment methodology.",
@@ -137,7 +128,7 @@ const ResourcesSection = () => {
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      Read Full Article
+                      Read The Full Article
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
                     </motion.a>                  </div>
                   <div className="relative">
