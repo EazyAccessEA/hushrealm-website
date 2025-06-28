@@ -35,12 +35,12 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <motion.div 
-            className="flex items-center space-x-3 cursor-pointer"
-            onClick={() => scrollToSection('hero')}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
+          <motion.a 
+              href="https://www.hushrealm.com"
+              className="flex items-center space-x-3 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+>
             <div className="relative">
               <Heart 
                 className="w-8 h-8 text-purple-600 fill-current" 
@@ -58,7 +58,7 @@ const Header = () => {
             <span className="text-2xl font-bold" style={{ color: 'var(--hushrealm-navy)' }}>
               HushRealm
             </span>
-          </motion.div>
+          </motion.a>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
