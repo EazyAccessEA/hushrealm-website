@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 // Import all components
@@ -11,22 +12,36 @@ import TestimonialsSection from './components/TestimonialsSection';
 import MissionSection from './components/MissionSection';
 import ResourcesSection from './components/ResourcesSection';
 import Footer from './components/Footer';
+import CaseStudiesPage from './components/CaseStudiesPage'; // Import the new page
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Hero />
-      <ProblemSection />
-      <SolutionSection />
-      <AssessmentSection />
-      <TestimonialsSection />
-      <MissionSection />
-      <ResourcesSection />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        
+        <Routes>
+          {/* Main landing page route */}
+          <Route path="/" element={
+            <>
+              <Hero />
+              <ProblemSection />
+              <SolutionSection />
+              <AssessmentSection />
+              <TestimonialsSection />
+              <MissionSection />
+              <ResourcesSection />
+            </>
+          } />
+          
+          {/* Case studies page route */}
+          <Route path="/case-studies" element={<CaseStudiesPage />} />
+        </Routes>
+        
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
 export default App;
-

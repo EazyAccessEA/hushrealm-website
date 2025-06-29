@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { BookOpen, Play, Download, ArrowRight, Clock, User } from 'lucide-react';
+import EmailCaptureModal from './EmailCaptureModal';
 
 const ResourcesSection = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleAccessGuideClick = (e) => {
+    e.preventDefault();
+    setShowModal(true);
+  };
+
+  const closeModal = () => setShowModal(false);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -57,7 +68,8 @@ const ResourcesSection = () => {
       readTime: "5 min read",
       category: "Results",
       icon: User,
-      color: "red"
+      color: "red",
+      url: "/case-studies"
     },
     {
       type: "Tool",
@@ -130,7 +142,8 @@ const ResourcesSection = () => {
                     >
                       Read The Full Article
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-                    </motion.a>                  </div>
+                    </motion.a>
+                  </div>
                   <div className="relative">
                     <div className="bg-white rounded-2xl p-8 shadow-xl border border-blue-200">
                       <div className="text-center mb-6">
@@ -189,14 +202,28 @@ const ResourcesSection = () => {
                     <Clock className="w-4 h-4" />
                     <span className="text-xs font-medium">{resource.readTime}</span>
                   </div>
-                  <motion.button
-                    className={`text-${resource.color}-600 hover:text-${resource.color}-700 font-semibold text-sm flex items-center gap-1 group`}
-                    whileHover={{ x: 5 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    Access {resource.type}
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-                  </motion.button>
+                  {resource.url ? (
+                    <Link to={resource.url}>
+                      <motion.div
+                        className={`text-${resource.color}-600 hover:text-${resource.color}-700 font-semibold text-sm flex items-center gap-1 group`}
+                        whileHover={{ x: 5 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        Access {resource.type}
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                      </motion.div>
+                    </Link>
+                  ) : (
+                    <motion.button
+                      onClick={handleAccessGuideClick}
+                      className={`text-${resource.color}-600 hover:text-${resource.color}-700 font-semibold text-sm flex items-center gap-1 group`}
+                      whileHover={{ x: 5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      Access {resource.type}
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                    </motion.button>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -238,6 +265,9 @@ const ResourcesSection = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Modal Injection */}
+      {showModal && <EmailCaptureModal onClose={closeModal} />}
     </section>
   );
 };
